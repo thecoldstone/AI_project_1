@@ -114,9 +114,11 @@ def parse(file, search_method=None):
         verticesDict = analyseInstances(file, numInstances + 1)
 
         # Analyze file by search_method
-        def set_search_method(search_method):
-            if search_method == 1:
+        def set_search_method(x):
+            if x == 1:
                 return guard_detect_simple(verticesDict)
+            if x == 2:
+                return 2
             else:
                 return None
 
@@ -128,6 +130,6 @@ def parse(file, search_method=None):
             break
 
         if(i < numIterations):
-            decision = input("Do you want continue: [y/n]")
+            decision = input("Do you want to continue: [y/n]")
             if decision is "n":
                 break
