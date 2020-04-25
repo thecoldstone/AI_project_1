@@ -1,0 +1,10 @@
+img30_12.pdf    (pdflatex img30_12.tex)
+  
+   PDF  com imagens dos 12 exemplos de  "dados30_12"
+   (com coordenadas de vértices)
+
+
+img30_20.pdf  (pdflatex img30_20.tex)
+
+   PDF  com imagens dos 20 exemplos de  "dados30_20"
+   (sem coordenadas de vértices)

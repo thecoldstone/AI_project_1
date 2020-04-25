@@ -1,0 +1,10 @@
+img50_20.pdf    (pdflatex img50_20.tex)
+  
+   PDF  com imagens dos 20 exemplos de  "dados50_20"
+   (com coordenadas de vértices)
+
+
+img50_100.pdf  (pdflatex img50_100.tex)
+
+   PDF  com imagens dos 100 exemplos de  "dados50_100"
+   (sem coordenadas de vértices)
