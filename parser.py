@@ -1,4 +1,4 @@
-from guardSimple import *
+from solver import *
 
 #TODO Parser has drawbacks
 def checkInt(file, i):
@@ -110,21 +110,13 @@ def parse(file, search_method=None):
     # Read all lines numIterations times
     for i in range(0, numIterations):
 
+        #Get vertices
         numInstances = checkInt(file, i)
         verticesDict = analyseInstances(file, numInstances + 1)
 
-        # Analyze file by search_method
-        def set_search_method(x):
-            if x == 1:
-                return guard_detect_simple(verticesDict)
-            if x == 2:
-                return 2
-            else:
-                return None
-
-        solution = set_search_method(search_method)
-
-        print(solution)
+        #Find solution
+        solve = Solver(verticesDict, search_method)
+        solve.solve()
 
         if(i + 1 == numIterations):
             break
