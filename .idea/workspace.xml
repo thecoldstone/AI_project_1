@@ -3,7 +3,55 @@
   <component name="ChangeListManager">
     <list default="true" id="9ec23d15-1a47-4531-997e-324355720734" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Python.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPartG75/G75_Nrects100_200.tgz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPartG75/G75_Nrects10_90.tgz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPartG75/G75_Nrects1500_5000.tgz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPartG75/G75_Nrects250_450.tgz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPartG75/G75_Nrects500_1000.tgz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects100_200.tgz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90.tgz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_10/dados10_20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_10/imgs10_20.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_20/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_20/dados20_12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_20/dados20_20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_20/img20_12.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_20/img20_12.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_30/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_30/dados30_12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_30/dados30_20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_30/imgs30_12.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_30/imgs30_12.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_30/imgs30_20.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_30/imgs30_20.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_40/dados40_12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_40/img40_12.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_40/img40_12.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_50/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_50/dados50_20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_50/img50_100.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_50/img50_100.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_50/img50_20.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/IMAGEM_50/img50_20.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/dados10_500" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/dados20_500" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/dados30_500" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/dados40_500" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/dados50_500" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/dados60_500" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/dados70_500" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/dados80_500" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects10_90/dados90_500" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects1500_5000.tgz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects250_450.tgz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Exemplos/DadosRPart_uniform/NRects500_1000.tgz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/ten_Instances" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +110,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -210,7 +258,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.53424656" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.5972603" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32876712" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -460,7 +508,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
         </state>
       </provider>
     </entry>
