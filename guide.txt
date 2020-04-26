@@ -1,0 +1,24 @@
+So here we are.
+
+It's a very quick introduction to out Project.
+
+We have these files:
+
+    Basically it is a pipeline of our project (From up to bottom) :
+
+    - main.py (Opens the file)
+    - parser.py (Analyzes input from the file)
+    - solver.py #Under all search methods
+
+        #FIXME
+        - simple.py (It's a simple one iteration search. Looks like greedy.)
+
+        #FIXME
+        - bfs.py (It's breadth first search)
+
+        #TODO
+        - ... (All other search methods)
+
+    #Utilities that we use in our project. Feel free to add something
+    - guard.py (Utilities to find a guard)
+    - node.py  (Node is used for tracking search. Used in BFS, ....)
