@@ -114,8 +114,9 @@ def parse(file, search_method=None):
         numInstances = checkInt(file, i)
         verticesDict = analyseInstances(file, numInstances + 1)
 
+        # print(verticesDict)
         #Find solution
-        solve = Solver(verticesDict, search_method)
+        solve = Solver(verticesDict, search_method, numInstances + 1)
         solve.solve()
 
         if(i + 1 == numIterations):

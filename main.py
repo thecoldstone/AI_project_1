@@ -2,7 +2,7 @@ from parser import *
 
 if __name__ == "__main__":
 
-    #Check stdin
+    # Check stdin
     try:
         SRC_FILE = sys.argv[1]
 
@@ -10,8 +10,8 @@ if __name__ == "__main__":
         print("[ERROR]: Not Enough Arguments")
         sys.exit(4)
 
-
-    #Open file and parse it from input
+    # Open file and parse it from input
     with open(SRC_FILE, 'r') as file:
-        parse(file)
+        # Here you can choose the search method
+        parse(file, 1)
 
