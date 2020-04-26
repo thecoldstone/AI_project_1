@@ -7,7 +7,7 @@ def checkInt(file, i):
         intToCheck = int(file.readline())
         return intToCheck
     except ValueError:
-        print("[ERROR]: Type Error for %i iteration", i)
+        print("[ERROR]: Type Error for iteration", i)
         sys.exit(1)
 
 def checkIntByChar(file):
@@ -72,7 +72,7 @@ def analyseInstances(file, instances):
                 sys.exit(2)
 
             key = ""
-            key += str(x_coord)+str(y_coord)
+            key += "(" + str(x_coord) + "," + str(y_coord) + ")"
 
             # Insert into the dictionary of lists
             # Where the key is a coordinate of a vertex and list is the all adjacent rectangles

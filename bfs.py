@@ -8,6 +8,8 @@ class BFS:
     def __init__(self, start):
         self.start = start
 
+    # def copy
+
     def solve(self):
         # Lists for open nodes and closed nodes
         q_open = []
@@ -16,15 +18,13 @@ class BFS:
         # Start node
         start_node = Node(self.start)
 
-        current_node = Node(None)
-
         # Add the start node
         q_open.append(start_node)
         q_close.append(start_node)
 
         while len(q_open) > 0:
 
-            current_node = copy.deepcopy(q_open.pop(0))
+            current_node = (q_open.pop(0))
 
             possible_guard = get_possible_guard(current_node)
 

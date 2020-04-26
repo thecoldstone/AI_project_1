@@ -12,18 +12,17 @@ def deleteVertices(dictOfLists, listOfVertices, guardKey):
 
 def getMax(dictOfLists):
 
-    listTmp = []
+    l_tmp = []
+    tmp_key = ""
 
     for key in dictOfLists:
-        if len(listTmp) <= len(dictOfLists[key]):
-            # 1. Check if there are vertices with 3 rectangles
-            if len(dictOfLists[key]) >= 3:
-                return dictOfLists[key], key
-            # 2. If not, let's find the maximum length
-            listTmp = dictOfLists[key]
+        if len(l_tmp) <= len(dictOfLists[key]):
+            l_tmp = dictOfLists[key]
+            tmp_key = key
+            if len(l_tmp) == 3:
+                break
 
-    # Returns if there is not list with 3 rectangles
-    return listTmp, key
+    return l_tmp, tmp_key
 
 
 def guard_detect_simple(dictOfLists):
@@ -34,21 +33,11 @@ def guard_detect_simple(dictOfLists):
     guardRectangles = []
 
     for key in dictOfLists:
-        # DEBUG
-        # print(dictOfLists)
-        # sys.exit(0)
         if len(dictOfLists[key]) >= 1:
             listOfVertices, key = getMax(dictOfLists)
-            # DEBUG
-            # print(listOfVertices)
-            # sys.exit(0)
             deleteVertices(dictOfLists, listOfVertices, key)
             guardRectangles.append(key)
             dictOfLists[key] = compareAndDelete(dictOfLists[key], dictOfLists[key])
-            # DEBUG
-            # print(dictOfLists[key])
-            # sys.exit(0)
             guardCounter += 1
 
-    print("Probable vertices:", guardRectangles)
-    return guardCounter
+    return guardRectangles, guardCounter

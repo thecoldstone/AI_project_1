@@ -8,10 +8,10 @@ if __name__ == "__main__":
 
     except IndexError:
         print("[ERROR]: Not Enough Arguments")
-        sys.exit(4)
+        sys.exit(1)
 
     # Open file and parse it from input
     with open(SRC_FILE, 'r') as file:
         # Here you can choose the search method
-        parse(file, 1)
+        parse(file)
 

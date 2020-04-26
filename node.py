@@ -18,7 +18,7 @@ class Node:
         return self.guard
 
     # TODO
-    def _copy(self):
+    def copy(self):
         pass
 
     # @property

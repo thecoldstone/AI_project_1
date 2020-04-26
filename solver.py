@@ -11,7 +11,11 @@ class Solver:
 
     def solve(self):
         if self.method is None:
-            return guard_detect_simple(self.start)
+            gr, gc = guard_detect_simple(self.start)
+            print("Probable guards: ", gr)
+            print("Number of guards: ", gc)
+
+            return
 
         elif self.method == 1:
             bfs = BFS(self.start)
