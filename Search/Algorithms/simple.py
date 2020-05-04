@@ -1,5 +1,3 @@
-import sys
-
 def compareAndDelete(list, listTwo):
     return [x for x in list if x not in listTwo]
 
@@ -27,8 +25,6 @@ def getMax(dictOfLists):
 
 def guard_detect_simple(dictOfLists):
 
-    guardCounter = 0
-
     # Vertices there can be located guard
     guardRectangles = []
 
@@ -38,6 +34,4 @@ def guard_detect_simple(dictOfLists):
             deleteVertices(dictOfLists, listOfVertices, key)
             guardRectangles.append(key)
             dictOfLists[key] = compareAndDelete(dictOfLists[key], dictOfLists[key])
-            guardCounter += 1
-
-    return guardRectangles, guardCounter
+    return guardRectangles

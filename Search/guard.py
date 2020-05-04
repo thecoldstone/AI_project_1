@@ -1,6 +1,3 @@
-from node import *
-
-
 def compare_and_delete(l_one, l_two):
     """
 
@@ -11,23 +8,9 @@ def compare_and_delete(l_one, l_two):
 
 def delete_rectangles(d, l):
 
-
     for key in d:
 
         d[key] = compare_and_delete(d[key], l)
-
-
-
-def delete_rectangles_2(node, v):
-
-    new_dic = {}
-
-    for key in node.dict:
-        new_dic[key] = []
-        node.dict[key] = compare_and_delete(node.dict[key], node.dict[v])
-
-    print(v, ":" ,node.d)
-    print()
 
 def get_possible_guard(node):
 

@@ -1,4 +1,4 @@
-from solver import *
+import sys
 
 #TODO Parser has drawbacks
 def checkInt(file, i):
@@ -34,26 +34,18 @@ def checkIntByChar(file):
         print("[ERROR]: Type Error")
         sys.exit(1)
 
-def analyseInstances(file, instances):
+
+def analyse(file, nr):
     """
 
     :param file: the current file with that we work
-    :param instances: amount of rectangles that we will analyse
+    :param nr: amount of rectangles that we will be analysed
     """
 
-    # TODO MAIN ALGORITHM
-    # HASH_TABLE is used for quick access to the coordinates
-    # There is a need to implement another abstract data structure
-    # to solve this problem. That data structure will help us to define
-    # where we have to put the "GUARD" and how many guards will be used overally
-
-    # Probably: Queue with possibility to enqueue and dequeue (?)
-    # Cause we need to update every time that data structure with reading a new line from the text file
-
-    verticesDict = {}
+    vertices_dict = {}
 
     #Main Algorithm
-    for i in range(1, instances):
+    for i in range(1, nr):
 
         # 1. Read index of current rectangle
         indexOfRectangle = checkIntByChar(file)
@@ -77,52 +69,28 @@ def analyseInstances(file, instances):
             # Insert into the dictionary of lists
             # Where the key is a coordinate of a vertex and list is the all adjacent rectangles
             # TODO Sort after each insertion
-            if key not in verticesDict.keys():
-                verticesDict[key] = []  # List for insertion number of rectangles
-                verticesDict[key].append(indexOfRectangle)
+            if key not in vertices_dict.keys():
+                vertices_dict[key] = []  # List for insertion number of rectangles
+                vertices_dict[key].append(indexOfRectangle)
             else:
-                verticesDict[key].append(indexOfRectangle)
+                vertices_dict[key].append(indexOfRectangle)
                 # print(verticesDict[key])
 
-    return verticesDict
-    # 4. Find guards
-    # numOfGuard = guardDetect(verticesDict)
-    # print(numOfGuard)
-
-    # print(verticesDict)
-
-    # if numOfGuard % 3 == 0:
-    #     print("The number of guard is: ", numOfGuard)
-    #     return numOfGuard
-    # else:
-    #     print("[WRONG]: The rule [ %i / 3 ] == 0 is not obeyed!", numOfGuard)
-    #     return numOfGuard
+    return vertices_dict
 
 
-def parse(file, search_method=None):
-    """Read the file line by line to get vertices of each rectangle"""
-    """First line: The number of instances
-       Second...Number of instances: The vertices of each rectangle"""
+def parse(file, i):
+    """
+    Read the file line by line to get vertices of each rectangle
 
-    #Read number of repetition of a program
-    numIterations = checkInt(file, None)
+    :param file:
+    :param i:
 
-    # Read all lines numIterations times
-    for i in range(0, numIterations):
+    :return:
+    """
 
-        #Get vertices
-        numInstances = checkInt(file, i)
-        verticesDict = analyseInstances(file, numInstances + 1)
+    # Get number of rectangles
+    nr = checkInt(file, i)
 
-        # print(verticesDict)
-        #Find solution
-        solve = Solver(verticesDict, search_method, numInstances + 1)
-        solve.solve()
+    return analyse(file, nr + 1), nr
 
-        if(i + 1 == numIterations):
-            break
-
-        if(i < numIterations):
-            decision = input("Do you want to continue: [y/n]")
-            if decision is "n":
-                break
