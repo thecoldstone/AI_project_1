@@ -1,4 +1,4 @@
-from Search.Algorithms import simple, bfs, dfs
+from Search.Algorithms import simple, bfs, dfs, ids, astar
 
 
 class Solver:
@@ -24,6 +24,7 @@ class Solver:
             print("Probable guards: ", self.solution)
             print("Number of guards: ", len(self.solution))
 
+        # BFS Algorithm
         elif method == 1:
 
             self.solution = bfs.BFS(self.start, self.nr).solve()
@@ -32,11 +33,30 @@ class Solver:
             print("Probable guards: ", self.solution)
             print("Number of guards: ", len(self.solution))
 
+        # DFS Algorithm
         elif method == 2:
 
             self.solution = dfs.DFS(self.start, self.nr).solve()
 
             print("DFS Algorithm")
+            print("Probable guards: ", self.solution)
+            print("Number of guards: ", len(self.solution))
+
+        # Iterative Deepening Search Algorithm
+        elif method == 3:
+
+            self.solution = ids.IDS(self.start).solve(self.nr / 3)
+
+            print("Iterative Deepening Search Algorithm")
+            print("Probable guards: ", self.solution)
+            # print("Number of guards: ", len(self.solution))
+
+        # A* Algorithm
+        elif method == 4:
+
+            self.solution = astar.AStar(self.start, self.nr).solve()
+
+            print("A* Algorithm")
             print("Probable guards: ", self.solution)
             print("Number of guards: ", len(self.solution))
 

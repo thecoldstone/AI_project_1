@@ -1,11 +1,12 @@
 from Search.node import *
 from Search.guard import *
 
+
 class BFS:
 
-    def __init__(self, start, number_of_instances):
+    def __init__(self, start, nr):
         self.start = start
-        self.nr = number_of_instances
+        self.nr = nr
 
     # def copy
 
@@ -24,7 +25,6 @@ class BFS:
         while len(q_open) > 0:
 
             current_node = q_open.pop(0)
-
             possible_guard = get_possible_guard(current_node)
 
             if possible_guard is None and current_node.guard >= (self.nr / 3):
@@ -33,7 +33,6 @@ class BFS:
             for i in possible_guard:
 
                 child = Node(current_node.d, current_node, i)
-
                 delete_rectangles(child.d, child.d[i])
 
                 if child not in q_close:

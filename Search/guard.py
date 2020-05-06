@@ -5,7 +5,6 @@ def compare_and_delete(l_one, l_two):
     """
     return [x for x in l_one if x not in l_two]
 
-
 def delete_rectangles(d, l):
 
     for key in d:
@@ -36,7 +35,6 @@ def get_possible_guard(node):
 
     elif len(l_1) is not 0:
         return l_1
-
     else:
         return None
 

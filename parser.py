@@ -1,4 +1,5 @@
 import sys
+import re
 
 #TODO Parser has drawbacks
 def checkInt(file, i):
@@ -6,8 +7,8 @@ def checkInt(file, i):
     try:
         intToCheck = int(file.readline())
         return intToCheck
-    except ValueError:
-        print("[ERROR]: Type Error for iteration", i)
+    except ValueError as e:
+        print("[ERROR]: Type Error for iteration", i, e)
         sys.exit(1)
 
 def checkIntByChar(file):

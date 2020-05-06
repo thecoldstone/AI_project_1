@@ -3,7 +3,7 @@ import copy
 
 class Node:
 
-    def __init__(self, d, parent=None, location=None):
+    def __init__(self, d, parent=None, location=None, nr=None):
         """
 
         :param d: dictionary of vertices
@@ -11,15 +11,16 @@ class Node:
         """
 
         self.parent = parent
-
         if self.parent is not None:
             self.d = copy.deepcopy(parent.d)
             self.guard = parent.guard + 1
             self.location = location
+            self.nr = self.parent.nr
         else:
             self.d = d
             self.guard = 0
             self.location = None
+            self.nr = nr
 
     @property
     def get_guard(self):
@@ -36,6 +37,7 @@ class Node:
             if node.location is not None:
                 path.append(node.location)
             node = node.parent
+
         return path[::-1]
 
     def __str__(self):
