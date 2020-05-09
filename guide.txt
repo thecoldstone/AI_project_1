@@ -8,17 +8,15 @@ We have these files:
 
     - main.py (Opens the file)
     - parser.py (Analyzes input from the file)
-    - solver.py #Under all search methods
+    - solver.py (Search Methods)
 
-        #FIXME
+    - Search/
         - simple.py (It's a simple one iteration search. Looks like greedy.)
 
-        #FIXME
         - bfs.py (It's breadth first search)
 
         #TODO
         - ... (All other search methods)
 
-    #Utilities that we use in our project. Feel free to add something
-    - guard.py (Utilities to find a guard)
-    - node.py  (Node is used for tracking search. Used in BFS, ....)
+        - guard.py (Utilities to find a guard)
+        - node.py  (Node is used for tracking search. Used in BFS, ....)
