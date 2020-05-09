@@ -1,5 +1,6 @@
 from Search.node import *
 from Search.guard import *
+from time import *
 
 
 class DFS:
@@ -14,25 +15,32 @@ class DFS:
         q_close = []
 
         # Start node
-        start_node = Node(self.start)
+        start_node = Node(self.start, nr=self.nr)
 
         # Add the start node
         q_open.append(start_node)
         q_close.append(start_node.guard)
 
+        j = 0
+
         while len(q_open) > 0:
 
             current_node = q_open.pop(len(q_open) - 1)
-            possible_guard = get_possible_guard(current_node)
 
-            if possible_guard is None and current_node.guard >= (self.nr / 3):
+            if current_node.guard >= (self.nr / 3) and current_node.nr == 0:
                 return current_node.get_path
 
-            for i in possible_guard:
+            if current_node.location not in q_close:
 
-                child = Node(current_node.d, current_node, i)
-                delete_rectangles(child.d, child.d[i])
+                q_close.append(current_node.location)
+                possible_guard = get_possible_guard(current_node)
 
-                if child not in q_close:
+                possible_guard.reverse()
+
+                for i in possible_guard:
+                    child = Node(current_node.d, current_node, i)
+                    delete_rectangles(child.d, child.d[i])
+                    child.nr = child.nr - len(current_node.d[i])
                     q_open.append(child)
-                    q_close.append(child.guard)
+
+        return []

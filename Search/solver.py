@@ -1,64 +1,41 @@
-from Search.Algorithms import simple, bfs, dfs, ids, astar
+from Search.Algorithms import simple, bfs, dfs, ids, astar, branch_and_bound
 
 
 class Solver:
 
-    def __init__(self, start, num_of_rectangles):
+    def __init__(self, start):
         self.start = start
-        self.nr = num_of_rectangles
         self.solution = []
 
-    def solve(self, method=None):
-
-        def solvable(num_guards):
-            return num_guards >= self.nr / 3
+    def solve(self, nr, method=None):
 
         if method is None:
 
-            self.solution= simple.guard_detect_simple(self.start)
-
-            if not solvable(len(self.solution)):
-                print("Solution is not find")
-
-            print("Simple")
-            print("Probable guards: ", self.solution)
-            print("Number of guards: ", len(self.solution))
+            self.solution= simple.guard_detect_simple(self.start, nr)
 
         # BFS Algorithm
         elif method == 1:
 
-            self.solution = bfs.BFS(self.start, self.nr).solve()
-
-            print("BFS Algorithm")
-            print("Probable guards: ", self.solution)
-            print("Number of guards: ", len(self.solution))
+            self.solution = bfs.BFS(self.start, nr).solve()
 
         # DFS Algorithm
         elif method == 2:
 
-            self.solution = dfs.DFS(self.start, self.nr).solve()
-
-            print("DFS Algorithm")
-            print("Probable guards: ", self.solution)
-            print("Number of guards: ", len(self.solution))
+            self.solution = dfs.DFS(self.start, nr).solve()
 
         # Iterative Deepening Search Algorithm
         elif method == 3:
 
-            self.solution = ids.IDS(self.start).solve(self.nr / 3)
-
-            print("Iterative Deepening Search Algorithm")
-            print("Probable guards: ", self.solution)
-            # print("Number of guards: ", len(self.solution))
+            self.solution = ids.IDS(self.start).solve(nr / 3)
 
         # A* Algorithm
         elif method == 4:
 
-            self.solution = astar.AStar(self.start, self.nr).solve()
+            self.solution = astar.AStar(self.start, nr).solve(nr / 3)
 
-            print("A* Algorithm")
-            print("Probable guards: ", self.solution)
-            print("Number of guards: ", len(self.solution))
+        # Branch-and-Bound
+        elif method == 5:
 
-        else:
-            return None
+            self.solution = branch_and_bound.BranchAndBround(self.start, nr).solve(nr / 3)
+
+        return self.solution

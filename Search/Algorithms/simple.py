@@ -23,15 +23,22 @@ def getMax(dictOfLists):
     return l_tmp, tmp_key
 
 
-def guard_detect_simple(dictOfLists):
+def guard_detect_simple(dictOfLists, nr):
 
     # Vertices there can be located guard
-    guardRectangles = []
+    guards = []
+    rr = nr
 
     for key in dictOfLists:
         if len(dictOfLists[key]) >= 1:
             listOfVertices, key = getMax(dictOfLists)
             deleteVertices(dictOfLists, listOfVertices, key)
-            guardRectangles.append(key)
+            guards.append(key)
+            rr = rr - len(listOfVertices)
             dictOfLists[key] = compareAndDelete(dictOfLists[key], dictOfLists[key])
-    return guardRectangles
+
+    if rr != 0 or not len(guards) >= nr / 3:
+        print(len(guards) >= nr / 3)
+        return []
+
+    return guards

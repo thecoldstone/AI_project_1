@@ -1,5 +1,6 @@
 from Search.node import *
 from Search.guard import *
+from time import *
 
 
 class BFS:
@@ -37,4 +38,4 @@ class BFS:
 
                 if child not in q_close:
                     q_open.append(child)
-                    q_close.append(child.guard)
+                    q_close.append(child)

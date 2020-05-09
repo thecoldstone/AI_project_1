@@ -13,13 +13,14 @@ class IDS:
 
     def dls(self, node, target, limit):
 
-        possible_guard = get_possible_guard(node)
-        if node.guard >= target and possible_guard is None:
+        if node.guard >= target:
             self.solution = node.get_path
             return node
 
         if limit <= 0:
             return None
+
+        possible_guard = get_possible_guard(node)
 
         for guard in possible_guard:
             child = Node(node.d, node, guard)
@@ -40,7 +41,10 @@ class IDS:
         if limit is None:
             limit = 99999
 
-        for depth in range(0, limit):
+        """
+        Initial depth equals [R/3] there is R number of rectangles
+        """
+        for depth in range(int(target), limit):
 
             print(depth)
             result = self.dls(Node(self.start), target, depth)

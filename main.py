@@ -19,22 +19,45 @@ if __name__ == "__main__":
     # Open file and parse it from input
     with open(SRC_FILE, 'r') as file:
 
-        # Read number of repetition of a program
-        numIterations = checkInt(file, None)
+        # Number of iterations
+        n_i = int(file.readline().split().pop(0))
 
-        for i in range(0, numIterations):
+        for i in range(0, n_i):
 
-            vertices, nr = parse(file, i)
+            # Number of rectangles
+            n_r = int(file.readline().split().pop(0))
 
-            problem = Solver(vertices, nr)
-            problem.solve(method)
+            vertices = parse(file, n_r+1)
 
-            if i + 1 == numIterations:
+            print("###########################")
+            print("Iteration:", i+1)
+            if method is None:
+                print("Simple")
+            elif method == 1:
+                print("BFS Algorithm")
+            elif method == 2:
+                print("DFS Algorithm")
+            elif method == 3:
+                print("Iterative Deepening Search Algorithm")
+            elif method == 4:
+                print("A* Algorithm")
+            elif method == 5:
+                print("Branch-and-Bound")
+            else:
+                print("Method does not exist")
                 break
 
-            if i < numIterations:
-                decision = input("Do you want to continue: [y/n]")
-                if decision is "n":
+            solution = Solver(vertices)
+            solution.solve(n_r, method)
+
+            print("Probable guards: ", solution.solution)
+            print("Number of guards: ", len(solution.solution))
+
+            if i + 1 is n_i:
+                break
+
+            decision = input("Do you want to continue: [y/n]")
+            if decision is "n":
                     break
 
 

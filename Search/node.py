@@ -23,6 +23,9 @@ class Node:
             self.nr = nr
 
     @property
+    def f(self):
+        return self.nr + self.guard
+    @property
     def get_guard(self):
         return self.guard
 

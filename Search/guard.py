@@ -36,7 +36,7 @@ def get_possible_guard(node):
     elif len(l_1) is not 0:
         return l_1
     else:
-        return None
+        return []
 
 
 def get_guard(node):
