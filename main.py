@@ -23,7 +23,7 @@ if __name__ == "__main__":
     except Exception:
         optimal = False
 
-
+    results = []
 
     # Open file and parse it from input
     with open(SRC_FILE, 'r') as file:
@@ -32,6 +32,9 @@ if __name__ == "__main__":
         n_i = int(file.readline().split().pop(0))
 
         for i in range(0, n_i):
+
+            if i is 5:
+                break
 
             # Number of rectangles
             n_r = int(file.readline().split().pop(0))
@@ -61,15 +64,16 @@ if __name__ == "__main__":
             solution = Solver(vertices)
             solution.solve(n_r, method, optimal)
 
-            print("Probable guards: ", solution.solution)
-            print("Number of guards: ", len(solution.solution))
+            results.append(len(solution.solution))
 
-            if i + 1 is n_i:
-                break
-
-            decision = input("Do you want to continue: [y/n]")
-            if decision is "n":
-                    break
+            # print("Probable guards: ", solution.solution)
+            # print("Number of guards: ", len(solution.solution))
 
 
+
+            # decision = input("Do you want to continue: [y/n]")
+            # if decision is "n":
+            #         break
+
+    print(sum(results)/len(results))
 

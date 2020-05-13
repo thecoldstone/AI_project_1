@@ -9,6 +9,7 @@ class BFS:
     """
 
     def __init__(self, start, nr):
+
         """
 
         :param start: dictionary of vertices
@@ -18,6 +19,7 @@ class BFS:
         self.nr = nr
 
     def solve(self, target):
+
         """
 
         :param target: in our case target equals number_of_guards >= (number_of_rectangles / 3)

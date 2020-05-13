@@ -18,6 +18,12 @@ class BranchAndBround:
         self.nr = nr
 
     def solve(self, target):
+
+        """
+
+        :param target: in our case target equals number_of_guards >= (number_of_rectangles / 3)
+        :return: list of possible guards
+        """
         # Lists for open nodes and closed nodes
         q_open = []
         q_close = []
@@ -29,6 +35,8 @@ class BranchAndBround:
         q_open.append(start_node)
 
         solution = []
+        # Upper Bound
+        UB = 99999
 
         while len(q_open) > 0:
 
@@ -38,32 +46,29 @@ class BranchAndBround:
             q_close.append(current_node.location)
 
             if current_node.nr == 0 and current_node.guard >= target:
-                solution = current_node.get_path
-                # print(current_node.guard)
-                if current_node.guard <= len(solution):
+                if current_node.guard < UB:
+                    UB = current_node.f
                     solution = current_node.get_path
+            else:
 
-            possible_guard = get_possible_guard(current_node)
-            possible_guard.reverse()
+                possible_guard = get_possible_guard(current_node)
+                possible_guard.reverse()
 
-            # print(possible_guard)
-            # exit(0)
+                for i in possible_guard:
 
-            for i in possible_guard:
-
-                if i in q_close:
-                    continue
-
-                child = Node(current_node.d, current_node, i)
-                child.nr = child.nr - len(current_node.d[i])
-                delete_rectangles(child.d, child.d[i])
-
-                for j in range(0, len(q_open) - 1):
-
-                    if q_open[j].location == child.location and q_open[j].f > child.f:
-                        q_open.pop(j)
+                    if i in q_close:
                         continue
 
-                q_open.append(child)
+                    child = Node(current_node.d, current_node, i)
+                    child.nr = child.nr - len(current_node.d[i])
+                    delete_rectangles(child.d, child.d[i])
+
+                    for j in range(0, len(q_open) - 1):
+
+                        if q_open[j].location == child.location and q_open[j].f > child.f:
+                            q_open.pop(j)
+
+                    if child.f <= UB:
+                        q_open.append(child)
 
         return solution

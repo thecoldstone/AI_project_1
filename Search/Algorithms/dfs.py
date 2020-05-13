@@ -17,7 +17,7 @@ class DFS:
         self.start = start
         self.nr = nr
 
-    def solve(self, target, optimal=False):
+    def solve(self, target, optimized=False):
 
         """
 
@@ -48,7 +48,8 @@ class DFS:
 
                 q_close.append(current_node.location)
 
-                if optimal is True:
+                # Optimized version
+                if optimized is True:
                     possible_guard = get_possible_guard(current_node)
                     possible_guard.reverse()
 
@@ -58,11 +59,10 @@ class DFS:
                         child.nr = child.nr - len(current_node.d[i])
                         q_open.append(child)
 
+                # Not optimized version
                 else:
                     possible_guard = get_all_guards(current_node)
                     possible_guard.reverse()
-
-                    print(len(possible_guard))
 
                     for i in possible_guard:
                         child = Node(current_node.d, current_node, i)

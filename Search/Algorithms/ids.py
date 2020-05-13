@@ -7,13 +7,14 @@ class IDS:
         ITERATIVE DEEPENING SEARCH
     """
 
-    def __init__(self, start):
+    def __init__(self, start, nr):
         self.start = start
         self.solution = []
+        self.nr = nr
 
     def dls(self, node, target, limit):
 
-        if node.guard >= target:
+        if node.guard >= target and node.nr == 0:
             self.solution = node.get_path
             return node
 
@@ -22,15 +23,17 @@ class IDS:
 
         possible_guard = get_possible_guard(node)
 
-        for guard in possible_guard:
-            child = Node(node.d, node, guard)
-            delete_rectangles(child.d, child.d[guard])
+        for i in possible_guard:
+            child = Node(node.d, node, i)
+            delete_rectangles(child.d, child.d[i])
+            child.nr = child.nr - len(node.d[i])
             if self.dls(child, target, limit - 1):
                 return child
 
         return None
 
     def solve(self, target, limit=None):
+
         """
 
         :param target: number of guards
@@ -41,15 +44,12 @@ class IDS:
         if limit is None:
             limit = 99999
 
-        """
-        Initial depth equals [R/3] there is R number of rectangles
-        """
+        # Initial depth equals [R/3] there is R number of rectangles
         for depth in range(int(target), limit):
 
-            print(depth)
-            result = self.dls(Node(self.start), target, depth)
+            result = self.dls(Node(self.start, nr=self.nr), target, depth)
 
             if result:
                 return self.solution
 
-        return None
+        return []

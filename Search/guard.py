@@ -7,31 +7,33 @@ def compare_and_delete(l_one, l_two):
 
 def delete_rectangles(d, l):
 
+    """
+
+    :param d: dictionary
+    :param l: list to delete
+    """
     for key in d:
 
         d[key] = compare_and_delete(d[key], l)
 
-# def get_first_guard(d_v, d_r):
-#
-#     nv = 0
-#     tmp = 0
-#
-#     for i in d_v:
-#         for j in d_v[i]:
-#             tmp = tmp + int(d_r[j])
-#
-#         if tmp > nv:
-#             nv = tmp
-#         tmp = 0
-#
-#     return nv
-
 
 def get_all_guards(node):
+
+    """
+
+    :param node: node (search state) for that we are going to get all possible guards
+    :return: list of all possible guards
+    """
     return [i for i in node.d if len(node.d[i]) > 0]
 
 
 def get_possible_guard(node):
+
+    """
+
+    :param node: node (search state) for that we are going to get all possible guards
+    :return: list of all BEST possible guards
+    """
 
     l_1 = []
     l_2 = []
@@ -60,6 +62,7 @@ def get_possible_guard(node):
 
 
 def get_guard(node):
+
     """
 
     Get the first and having the most adjacent rectangles vertex

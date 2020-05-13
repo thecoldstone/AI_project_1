@@ -1,9 +1,5 @@
 # Rectangular Partition Surveillance
 
-  ### Problem Description
-  
-  Description...
-
   ### Search methods
   ```
     - Simple
@@ -18,24 +14,26 @@
   
   ```bash
   git clone https://github.com/thecoldstone/AI_project_1
-  python3 main.py file [method]
+  python3 main.py file [method] [o]
   ```
   
   ##### Methods
   
-  ```
   Without [method] you call simple search
   
   The following search methods:
   
-  1     (BFS)
-  2     (DFS)
-  2 o   (Optimized DFS)
-  3     (IDS)
-  4     (A*)
-  5     (B&B)
-  ```
+  | Method | Search Method |
+  | ---  | --- |
+  |1     | BFS |
+  |2     | DFS |
+  |2 o   | Optimized DFS|
+  |3     |(IDS)|
+  |4     |(A*)|
+  |5     |(B&B)|
   
+  Flag [o] server for optimized version for DFS Algorithm
+   
   
   ### Hierarchy
   

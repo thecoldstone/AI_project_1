@@ -1,13 +1,24 @@
 from Search.node import *
 from Search.guard import *
 
+
 class AStar:
 
+    """
+    A Star Algorithm
+    """
     def __init__(self, start, nr):
         self.start = start
         self.nr = nr
 
     def solve(self, target):
+
+        """
+
+        :param target: in our case target equals number_of_guards >= (number_of_rectangles / 3)
+        :return: list of possible guards
+        """
+
         # Lists for open nodes and closed nodes
         q_open = []
         q_close = []
@@ -20,7 +31,7 @@ class AStar:
 
         while len(q_open) > 0:
 
-            # Sort queue to get the lowest f value and rectangle with less left rectangles
+            # Sort queue to get the lowest f value and with less left rectangles
             q_open.sort(key=lambda node: node.f and node.nr)
 
             current_node = q_open.pop(0)
