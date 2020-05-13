@@ -1,6 +1,5 @@
 from Search.node import *
 from Search.guard import *
-from time import *
 
 class AStar:
 
@@ -21,43 +20,32 @@ class AStar:
 
         while len(q_open) > 0:
 
+            # Sort queue to get the lowest f value and rectangle with less left rectangles
+            q_open.sort(key=lambda node: node.f and node.nr)
 
-            q_open.sort(key=lambda node: node.f)
-
-            # for i in q_open:
-            #     print(i.location, i.f, ';', end='')
-            # print()
             current_node = q_open.pop(0)
+            q_close.append(current_node.location)
 
-            q_close.append(current_node)
-
+            # Solution is found
             if current_node.nr == 0 and current_node.guard >= target:
                 return current_node.get_path
 
+            # Generate children
             possible_guard = get_possible_guard(current_node)
 
-            if possible_guard is None:
-                continue
-
-            children = []
             for i in possible_guard:
+
+                if i in q_close:
+                    continue
+
                 child = Node(current_node.d, current_node, i)
                 child.nr = child.nr - len(current_node.d[i])
                 delete_rectangles(child.d, child.d[i])
-                children.append(child)
 
-            for child in children:
+                for j in range(0, len(q_open) - 1):
 
-                # if child.parent is not None:
-                #     print(child.parent.location, end='')
-                #     print('->'*child.guard, end='')
-                #     print(child.location, end='')
-                # sleep(1)
-                if child in q_close:
-                    continue
-
-                for open_node in q_open:
-                    if child == open_node and child.g > open_node.g:
+                    if q_open[j].location == child.location and q_open[j].f > child.f:
+                        q_open.pop(j)
                         continue
 
                 q_open.append(child)

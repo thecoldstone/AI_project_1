@@ -16,6 +16,15 @@ if __name__ == "__main__":
     except Exception:
         method = None
 
+    try:
+        optimal = sys.argv[3]
+        if optimal is 'o':
+            optimal = True
+    except Exception:
+        optimal = False
+
+
+
     # Open file and parse it from input
     with open(SRC_FILE, 'r') as file:
 
@@ -36,6 +45,8 @@ if __name__ == "__main__":
             elif method == 1:
                 print("BFS Algorithm")
             elif method == 2:
+                if optimal is True:
+                    print("Optimal", end=' ')
                 print("DFS Algorithm")
             elif method == 3:
                 print("Iterative Deepening Search Algorithm")
@@ -48,7 +59,7 @@ if __name__ == "__main__":
                 break
 
             solution = Solver(vertices)
-            solution.solve(n_r, method)
+            solution.solve(n_r, method, optimal)
 
             print("Probable guards: ", solution.solution)
             print("Number of guards: ", len(solution.solution))

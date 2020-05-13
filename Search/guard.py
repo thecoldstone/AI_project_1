@@ -11,6 +11,26 @@ def delete_rectangles(d, l):
 
         d[key] = compare_and_delete(d[key], l)
 
+# def get_first_guard(d_v, d_r):
+#
+#     nv = 0
+#     tmp = 0
+#
+#     for i in d_v:
+#         for j in d_v[i]:
+#             tmp = tmp + int(d_r[j])
+#
+#         if tmp > nv:
+#             nv = tmp
+#         tmp = 0
+#
+#     return nv
+
+
+def get_all_guards(node):
+    return [i for i in node.d if len(node.d[i]) > 0]
+
+
 def get_possible_guard(node):
 
     l_1 = []

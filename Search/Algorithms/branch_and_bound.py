@@ -8,6 +8,7 @@ class BranchAndBround:
     def __init__(self, start, nr):
 
         """
+        Least Cost Branch and Bound Algorithm
 
         :param start: start point
         :param nr: number of rectangles
@@ -18,7 +19,6 @@ class BranchAndBround:
 
     def solve(self, target):
         # Lists for open nodes and closed nodes
-
         q_open = []
         q_close = []
 
@@ -44,31 +44,26 @@ class BranchAndBround:
                     solution = current_node.get_path
 
             possible_guard = get_possible_guard(current_node)
+            possible_guard.reverse()
 
-            if possible_guard is None:
-                continue
+            # print(possible_guard)
+            # exit(0)
 
-            children = []
             for i in possible_guard:
+
+                if i in q_close:
+                    continue
 
                 child = Node(current_node.d, current_node, i)
                 child.nr = child.nr - len(current_node.d[i])
                 delete_rectangles(child.d, child.d[i])
-                children.append(child)
 
-            for child in children:
+                for j in range(0, len(q_open) - 1):
 
-                if child.location in q_close:
-                    continue
-
-                for i in range(0, len(q_open) - 1):
-                    # if open_node.location == child.location:
-                    #     print(open_node.f > child.f)
-                    if q_open[i].location == child.location and q_open[i].f > child.f:
-                        q_open.pop(i)
+                    if q_open[j].location == child.location and q_open[j].f > child.f:
+                        q_open.pop(j)
                         continue
 
                 q_open.append(child)
-
 
         return solution

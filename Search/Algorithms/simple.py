@@ -38,7 +38,7 @@ def guard_detect_simple(dictOfLists, nr):
             dictOfLists[key] = compareAndDelete(dictOfLists[key], dictOfLists[key])
 
     if rr != 0 or not len(guards) >= nr / 3:
-        print(len(guards) >= nr / 3)
+        print(rr)
         return []
 
     return guards

@@ -7,7 +7,7 @@ class Solver:
         self.start = start
         self.solution = []
 
-    def solve(self, nr, method=None):
+    def solve(self, nr, method=None, optimal=False):
 
         if method is None:
 
@@ -16,12 +16,12 @@ class Solver:
         # BFS Algorithm
         elif method == 1:
 
-            self.solution = bfs.BFS(self.start, nr).solve()
+            self.solution = bfs.BFS(self.start, nr).solve(nr / 3)
 
         # DFS Algorithm
         elif method == 2:
 
-            self.solution = dfs.DFS(self.start, nr).solve()
+            self.solution = dfs.DFS(self.start, nr).solve(nr / 3, optimal)
 
         # Iterative Deepening Search Algorithm
         elif method == 3:

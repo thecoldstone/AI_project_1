@@ -12,9 +12,10 @@ def parse(file, nr):
         line = file.readline().split()
         i_r, n_v, vertices = int(line[0]), int(line[1]), line[2:]
 
+        # Store as vertex and adjacent rectangles to that vertex
         for i in range(0, len(vertices), 2):
 
-            key = '(' + vertices[i] + ',' + vertices[i + 1] + ')'
+            key = vertices[i] + ',' + vertices[i + 1]
 
             if key not in v_d.keys():
                 v_d[key] = []  # List for insertion number of rectangles
