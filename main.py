@@ -46,7 +46,7 @@ if __name__ == "__main__":
                 print("BFS Algorithm")
             elif method == 2:
                 if optimal is True:
-                    print("Optimal", end=' ')
+                    print("Optimized", end=' ')
                 print("DFS Algorithm")
             elif method == 3:
                 print("Iterative Deepening Search Algorithm")

@@ -6,12 +6,12 @@
 
   ### Search methods
   ```
-    - Greedy Search
-    - Breadth First Search
-    - Depth First Search
-    - Iterative Deepening Search
-    - A* Search
-    - Branch&Bound
+    - Simple
+    - Breadth First Search (BFS)
+    - Depth First Search (DFS)
+    - Iterative Deepening Search (IDS)
+    - A* Search (A*)
+    - Branch&Bound (B&B)
   ```
 
   ### Build
@@ -20,6 +20,22 @@
   git clone https://github.com/thecoldstone/AI_project_1
   python3 main.py file [method]
   ```
+  
+  ##### Methods
+  
+  ```
+  Without [method] you call simple search
+  
+  The following search methods:
+  
+  1     (BFS)
+  2     (DFS)
+  2 o   (Optimized DFS)
+  3     (IDS)
+  4     (A*)
+  5     (B&B)
+  ```
+  
   
   ### Hierarchy
   
